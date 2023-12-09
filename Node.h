@@ -5,13 +5,8 @@ public:
 	Node* nextNode; // Pointer for the next node
 
 	// Constructor - Initialize a Node object
-	Node(int input_value) { // Node ¸¸µé±â
+	Node(int input_value) { // Node ë§Œë“¤ê¸°
 		value = input_value;
 		nextNode = nullptr;
-	}
-
-	// DeConstructor
-	~Node() { // Node »èÁ¦ÇÏ±â
-		cout << "Node is deleted" << endl;
 	}
 };
