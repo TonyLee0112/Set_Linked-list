@@ -1,17 +1,16 @@
-#pragma once
 #include "Node.h"
 class Linkedlist {
-private:
-	// Member data
-	Node* headNode; // Node class ∞¥√º æ»¿« Node* ∞° æ∆¥œ∞Ì class ∞¥√º∏¶ ∞°∏Æ≈∞¥¬ ptr ∑Œ º±æ
 
 public:
+	// Member data
+	Node* headNode; // Node class Í∞ùÏ≤¥ ÏïàÏùò Node* Í∞Ä ÏïÑÎãàÍ≥† class Í∞ùÏ≤¥Î•º Í∞ÄÎ¶¨ÌÇ§Îäî ptr Î°ú ÏÑ†Ïñ∏
+	
 	// Constructor
 	Linkedlist() {
 		headNode = nullptr;
 	}
 
-	// DeConstructor
+	// DeConstructor - Program Ïù¥ Ï¢ÖÎ£åÎêòÎ©¥ÏÑú ÏûêÎèôÏúºÎ°ú Ïã§ÌñâÎê®.
 	~Linkedlist() {
 		Node* currentNode = headNode;
 		Node* next;
@@ -24,16 +23,17 @@ public:
 			headNode = nullptr;
 		}
 	}
+	
 	// Member Functions
 	void insertvalue(int value) {
-		Node* newNode = new Node(value); // new : µø¿˚ ∏ﬁ∏∏Æ «“¥Á
+		Node* newNode = new Node(value); // new : ÎèôÏ†Å Î©îÎ™®Î¶¨ Ìï†Îãπ
 		if (headNode == nullptr) {
 			headNode = newNode;
 		}
 		else {
 			Node* currentNode = headNode;
-			while (currentNode->nextNode != nullptr) { // headNode ∫Œ≈Õ tailNode ±Ó¡ˆ ¿Ãµø O(N)
-				currentNode = currentNode->nextNode; // nextNode ∑Œ currentNode ∏¶ ∫Ø∞Ê
+			while (currentNode->nextNode != nullptr) { // headNode Î∂ÄÌÑ∞ tailNode ÍπåÏßÄ Ïù¥Îèô O(N)
+				currentNode = currentNode->nextNode; // nextNode Î°ú currentNode Î•º Î≥ÄÍ≤Ω
 			}
 			currentNode->nextNode = newNode;
 		}
@@ -47,15 +47,14 @@ public:
 		}
 		return cnt;
 	}
-
 	void print_all() {
 		Node* currentNode = headNode;
 		while (currentNode != nullptr) {
-			cout << currentNode->value << endl; // value √‚∑¬
-			currentNode = currentNode->nextNode; //  nextNode ∑Œ ¿Ãµø
+			cout << currentNode->value << " "; // value Ï∂úÎ†•
+			currentNode = currentNode->nextNode; //  nextNode Î°ú Ïù¥Îèô
 		}
+		cout << endl;
 	}
-
 	int operator[](int n) {
 		Node* currentNode = headNode;
 		int cnt = 1;
@@ -68,15 +67,14 @@ public:
 			cnt++;
 		}
 	}
-
 	void print_val_nth_node(int n) {
-		// n π¯¬∞ node ¿« value ∏¶ return
+		// n Î≤àÏß∏ node Ïùò value Î•º return
 		Node* currentNode = headNode;
 		int cnt = 1;
 		while (cnt != n) {
 			cnt++;
 			currentNode = currentNode->nextNode;
 		}
-		cout << n << "π¯ ¬∞ node¿« value : " << currentNode->value;
+		cout << n << "Î≤à Ïß∏ nodeÏùò value : " << currentNode->value;
 	}
 };
