@@ -10,5 +10,5 @@ void main() {
 	ex.insertvalue(4);
 	ex.insertvalue(1);
 	ex.insertvalue(7);
-
+	delete ex;
 }
